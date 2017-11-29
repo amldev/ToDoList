@@ -9,7 +9,7 @@ import io.reactivex.Flowable
     @Query("select * from task")
     fun getAllTasks(): Flowable<List<Task>>
 
-    @Query("select * from task where id = :p0")
+    @Query("select * from task where id like :id")
     fun findTaskById(id: Long): Task
 
     @Insert(onConflict = REPLACE)
